@@ -2,7 +2,6 @@
 #include <string.h>
 #include <iostream>
 #include <Windows.h>
-#include "Set.h"
 #include "IntegerSet.h"
 
 using namespace std;
