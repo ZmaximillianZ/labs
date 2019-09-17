@@ -15,15 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Lab2.cpp">
+    <ClCompile Include="Lab3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="IntegerSet.cpp">
+    <ClCompile Include="IntegerList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="IntegerSet.h">
+    <ClInclude Include="IntegerList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

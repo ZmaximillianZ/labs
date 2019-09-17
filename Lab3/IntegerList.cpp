@@ -11,6 +11,19 @@ IntegerList::IntegerList()
 	this->end = NULL;
 }
 
+IntegerList::IntegerList(const IntegerList& obj)
+{
+	this->count = 0;
+	this->begin = NULL;
+	this->end = NULL;
+	ListNode* selectedNode = obj.begin;
+	while (selectedNode != NULL)
+	{
+		this->Add(selectedNode->data);
+		selectedNode = selectedNode->next;
+	}
+}
+
 void IntegerList::Add(int item)
 {
 	ListNode* newNode = new ListNode();
