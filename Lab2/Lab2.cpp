@@ -24,17 +24,7 @@ int main()
 	}
 
 	cout << endl << endl << "Введeнное множество :" << endl;
-	for (int i = 0; i < n; i++)
-	{
-		cout << array[i];
-		if (i + 1 != n) {
-			cout << ", ";
-		}
-		else
-		{
-			cout << endl;
-		}
-	}
-
-	IntegerSet* set = new IntegerSet();
+	IntegerSet* set = new IntegerSet(array, n);
+	set->Show();
+	delete set;
 }
