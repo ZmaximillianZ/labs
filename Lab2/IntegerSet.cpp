@@ -19,7 +19,7 @@ bool IntegerSet::Contins(int* array, int n, int item)
 IntegerSet::IntegerSet()
 {
 	this->size = 0;
-	this->data = new int[0];
+	this->data = NULL;
 }
 
 IntegerSet::IntegerSet(const IntegerSet& object)
@@ -54,13 +54,36 @@ bool IntegerSet::Include(int item)
 }
 
 // пересечние
-IntegerSet IntegerSet::Intersect(IntegerSet& object)
+IntegerSet IntegerSet::Intersect(const IntegerSet& object)
 {
-	return IntegerSet();
+	// вычисл€€м количество уникальных символов что бы выделить
+	// пам€ть дл€ нового массива
+	int count = 0;
+	for (int i = 0; i < object.size; i++)
+	{
+		if (Contins(this->data, this->size, object.data[i])) {
+			count++;
+		}
+	}
+
+	IntegerSet rez;
+	rez.data = new int[count];
+	rez.size = count;
+
+	int j = 0;
+	for (int i = 0; i < object.size; i++)
+	{
+		if (Contins(this->data, this->size, object.data[i])) {
+			rez.data[j] = object.data[i];
+			j++;
+		}
+	}
+
+	return rez;
 }
 
 // ќбедениение
-IntegerSet IntegerSet::Union(IntegerSet& object)
+IntegerSet IntegerSet::Union(const IntegerSet& object)
 {
 	// вычисл€€м количество уникальных символов что бы выделить
 	// пам€ть дл€ нового массива
@@ -95,9 +118,66 @@ IntegerSet IntegerSet::Union(IntegerSet& object)
 }
 
 // –азница
-IntegerSet IntegerSet::Difference(IntegerSet& object)
+IntegerSet IntegerSet::Difference(const IntegerSet& object)
 {
-	return IntegerSet();
+	// вычисл€€м количество уникальных символов что бы выделить
+	// пам€ть дл€ нового массива
+	int count = 0;
+	for (int i = 0; i < object.size; i++)
+	{
+		if (!Contins(this->data, this->size, object.data[i])) {
+			count++;
+		}
+	}
+	for (int i = 0; i < this->size; i++)
+	{
+		if (!Contins(object.data, object.size, this->data[i])) {
+			count++;
+		}
+	}
+
+	IntegerSet rez;
+
+	rez.size = count;
+	rez.data = new int[count];
+
+	int j = 0;
+	for (int i = 0; i < object.size; i++)
+	{
+		if (!Contins(this->data, this->size, object.data[i])) {
+			rez.data[j] = object.data[i];
+			j++;
+		}
+	}
+	for (int i = 0; i < this->size; i++)
+	{
+		if (!Contins(object.data, object.size, this->data[i])) {
+			rez.data[j] = this->data[i];
+			j++;
+		}
+	}
+
+	return rez;
+}
+
+IntegerSet IntegerSet::operator-(const IntegerSet& object)
+{
+	return Difference(object);
+}
+
+IntegerSet IntegerSet::operator+(const IntegerSet& object)
+{
+	return Union(object);
+}
+
+IntegerSet IntegerSet::operator*(const IntegerSet& object)
+{
+	return Intersect(object);
+}
+
+int& IntegerSet::operator[](const int index)
+{
+	return this->data[index];
 }
 
 void IntegerSet::Show()

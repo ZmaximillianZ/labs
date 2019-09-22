@@ -34,19 +34,22 @@ int main()
 	setlocale(LC_ALL, "rus");
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
-	int n;
+	int n1, n2;
 	
-	cout << "Введите n:" << endl;
-	cin >> n;
+	cout << "Введите n для первого можества :" << endl;
+	cin >> n1;
 
 	cout << endl << endl << "Введите первое множество :" << endl;
-	int* array1 = inputArray(n);
+	int* array1 = inputArray(n1);
+
+	cout << "Введите n для второго можества :" << endl;
+	cin >> n2;
 
 	cout << endl << endl << "Введите второе множество :" << endl;
-	int* array2 = inputArray(n);
+	int* array2 = inputArray(n2);
 
-	IntegerSet* set1 = new IntegerSet(array1, n);
-	IntegerSet* set2 = new IntegerSet(array2, n);
+	IntegerSet* set1 = new IntegerSet(array1, n1);
+	IntegerSet* set2 = new IntegerSet(array2, n2);
 
 	delete array1;
 	delete array2;
@@ -54,13 +57,23 @@ int main()
 	cout << endl << endl << "Первое множество :" << endl;
 	set1->Show();
 
-	cout << endl << endl << "Второе множество множество :" << endl;
+	cout << endl << endl << "Второе множество :" << endl;
 	set2->Show();
 
-	cout << endl << endl << "Обьеденние множеста 1 и 2:" << endl;
+	cout << endl << endl << "Обьеденние множеств :" << endl;
 
-	IntegerSet interс = set1->Union(*set2);
-	interс.Show();
+	IntegerSet unionSet = (*set1) + (*set2);
+	unionSet.Show();
+
+	cout << endl << endl << "Разница множеств :" << endl;
+
+	IntegerSet differenceSet = (*set1) - (*set2);
+	differenceSet.Show();
+
+	cout << endl << endl << "Пересечение множеств :" << endl;
+
+	IntegerSet intersectSet = (*set1) * (*set2);
+	intersectSet.Show();
 
 
 	delete set1;
