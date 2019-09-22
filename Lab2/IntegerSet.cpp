@@ -183,7 +183,7 @@ int& IntegerSet::operator[](const int index)
 void IntegerSet::Show()
 {
 	if (this->size == 0) {
-		cout << "Пустое множество";
+		cout << "[Пустое множество]";
 	}
 
 	for (int i = 0; i < this->size; i++)
