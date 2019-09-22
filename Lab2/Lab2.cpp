@@ -30,6 +30,11 @@ int* inputArray(int n)
 	return array;
 }
 
+IntegerSet fullDiff(IntegerSet set1, IntegerSet set2)
+{
+	return (set1 + set2) - (set1 * set2);
+}
+
 int main()
 {
 	setlocale(LC_ALL, "rus");
@@ -49,24 +54,24 @@ int main()
 	cout << endl << endl << "Введите второе множество :" << endl;
 	int* array2 = inputArray(n2);
 
-	IntegerSet* set1 = new IntegerSet(array1, n1);
-	IntegerSet* set2 = new IntegerSet(array2, n2);
+	IntegerSet set1(array1, n1);
+	IntegerSet set2(array2, n2);
 
 	delete array1;
 	delete array2;
 
 	cout << endl << endl << "Первое множество :" << endl;
-	set1->Show();
+	set1.Show();
 
 	cout << endl << endl << "Второе множество :" << endl;
-	set2->Show();
+	set2.Show();
 
 	for (int i = 0; i < 3; i++)
 	{
 		int item;
 		cout << endl << endl << "Введите элемент для поиска :" << endl;
 		cin >> item;
-		if (set1->Include(item))
+		if (set1.Include(item))
 		{
 			cout << endl << endl << "Первое можество содержит данный элемент" << endl;
 		}
@@ -75,7 +80,7 @@ int main()
 			cout << endl << endl << "Первое можество не содержит данный элемент" << endl;
 		}
 
-		if (set2->Include(item))
+		if (set2.Include(item))
 		{
 			cout << "Второе можество содержит данный элемент" << endl;
 		}
@@ -87,20 +92,20 @@ int main()
 
 	cout << endl << endl << "Обьеденние множеств :" << endl;
 
-	IntegerSet unionSet = (*set1) + (*set2);
+	IntegerSet unionSet = set1 + set2;
 	unionSet.Show();
 
 	cout << endl << endl << "Разница множеств :" << endl;
 
-	IntegerSet differenceSet = (*set1) - (*set2);
+	IntegerSet differenceSet = set1 - set2;
 	differenceSet.Show();
 
 	cout << endl << endl << "Пересечение множеств :" << endl;
 
-	IntegerSet intersectSet = (*set1) * (*set2);
+	IntegerSet intersectSet = set1 * set2;
 	intersectSet.Show();
 
-
-	delete set1;
-	delete set2;
+	cout << endl << endl << "Прямая сумма множеств :" << endl;
+	IntegerSet fullDiffSet = fullDiff(set1, set2);
+	fullDiffSet.Show();
 }

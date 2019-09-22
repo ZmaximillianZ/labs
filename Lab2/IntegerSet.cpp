@@ -123,12 +123,6 @@ IntegerSet IntegerSet::Difference(const IntegerSet& object)
 	// вычисл€€м количество уникальных символов что бы выделить
 	// пам€ть дл€ нового массива
 	int count = 0;
-	for (int i = 0; i < object.size; i++)
-	{
-		if (!Contins(this->data, this->size, object.data[i])) {
-			count++;
-		}
-	}
 	for (int i = 0; i < this->size; i++)
 	{
 		if (!Contins(object.data, object.size, this->data[i])) {
@@ -142,13 +136,6 @@ IntegerSet IntegerSet::Difference(const IntegerSet& object)
 	rez.data = new int[count];
 
 	int j = 0;
-	for (int i = 0; i < object.size; i++)
-	{
-		if (!Contins(this->data, this->size, object.data[i])) {
-			rez.data[j] = object.data[i];
-			j++;
-		}
-	}
 	for (int i = 0; i < this->size; i++)
 	{
 		if (!Contins(object.data, object.size, this->data[i])) {
