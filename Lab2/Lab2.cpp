@@ -57,8 +57,8 @@ int main()
 	IntegerSet set1(array1, n1);
 	IntegerSet set2(array2, n2);
 
-	delete array1;
-	delete array2;
+	delete[] array1;
+	delete[] array2;
 
 	cout << endl << endl << "Первое множество :" << endl;
 	set1.Show();

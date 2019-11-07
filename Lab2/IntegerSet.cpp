@@ -188,5 +188,5 @@ void IntegerSet::Show()
 
 IntegerSet::~IntegerSet()
 {
-	delete this->data;
+	delete[] this->data;
 }

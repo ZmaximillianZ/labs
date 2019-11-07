@@ -139,7 +139,7 @@ int main()
 	{
 		delete pets[i];
 	}
-	delete pets;
+	delete[] pets;
 
 	return 0;
 }
