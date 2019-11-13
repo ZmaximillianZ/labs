@@ -23,11 +23,8 @@ bool compareLists(List<T> list1, List<T> list2) {
 	return i == n;
 }
 
-int main()
+void UsingChar()
 {
-	setlocale(LC_ALL, "rus");
-	SetConsoleCP(1251);
-	SetConsoleOutputCP(1251);
 	int n;
 
 	cout << "Введите n:" << endl;
@@ -65,6 +62,118 @@ int main()
 	else
 	{
 		cout << endl << "Списки не эквивалентны!" << endl;
+	}
+}
+
+
+void UsingInt()
+{
+	int n;
+
+	cout << "Введите n:" << endl;
+	cin >> n;
+
+	List<int> list1;
+	cout << "Введите элемент список 1" << endl;
+	int item;
+	for (int i = 0; i < n; i++)
+	{
+		cout << "Введите элемент " << i + 1 << ": " << endl;
+		cin >> item;
+		list1.Add(item);
+	}
+
+	List<int> list2;
+	cout << "Введите элемент список 2" << endl;
+	for (int i = 0; i < n; i++)
+	{
+		cout << "Введите элемент " << i + 1 << ": " << endl;
+		cin >> item;
+		list2.Add(item);
+	}
+
+	cout << endl << "Список 1:" << endl;
+	list1.Show();
+
+	cout << endl << "Список 2:" << endl;
+	list2.Show();
+
+	if (compareLists(list1, list2))
+	{
+		cout << endl << "Списки эквивалентны!" << endl;
+	}
+	else
+	{
+		cout << endl << "Списки не эквивалентны!" << endl;
+	}
+}
+
+
+void UsingDouble()
+{
+	int n;
+
+	cout << "Введите n:" << endl;
+	cin >> n;
+
+	List<double> list1;
+	cout << "Введите элемент список 1" << endl;
+	double item;
+	for (int i = 0; i < n; i++)
+	{
+		cout << "Введите элемент " << i + 1 << ": " << endl;
+		cin >> item;
+		list1.Add(item);
+	}
+
+	List<double> list2;
+	cout << "Введите элемент список 2" << endl;
+	for (int i = 0; i < n; i++)
+	{
+		cout << "Введите элемент " << i + 1 << ": " << endl;
+		cin >> item;
+		list2.Add(item);
+	}
+
+	cout << endl << "Список 1:" << endl;
+	list1.Show();
+
+	cout << endl << "Список 2:" << endl;
+	list2.Show();
+
+	if (compareLists(list1, list2))
+	{
+		cout << endl << "Списки эквивалентны!" << endl;
+	}
+	else
+	{
+		cout << endl << "Списки не эквивалентны!" << endl;
+	}
+}
+
+int main()
+{
+	setlocale(LC_ALL, "rus");
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+	cout << "Выберите тип данных:" << endl;
+	cout << "1 - int" << endl;
+	cout << "2 - char" << endl;
+	cout << "3 - double" << endl;
+	int type = 0;
+	cin >> type;
+	switch (type)
+	{
+	case 1:
+		UsingInt();
+		break;
+	case 2:
+		UsingChar();
+		break;
+	case 3:
+		UsingDouble();
+		break;
 	}
 
 	return 0;

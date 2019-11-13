@@ -3,6 +3,7 @@
 template<typename T>
 class List
 {
+private:
 	struct ListNode
 	{
 		T data;
@@ -12,7 +13,7 @@ class List
 	ListNode* begin;
 	ListNode* end;
 	int count;
-
+	ListNode* CreateNode(T item);
 public:
 	List();
 	List(const List<T>& obj);
@@ -20,5 +21,7 @@ public:
 	T& operator[] (const int index);
 	void Show();
 	int Size();
+	void Insert(int index, T item);
+	void Remove(int index);
 	~List();
 };
