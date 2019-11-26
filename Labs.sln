@@ -18,6 +18,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lab5", "Lab5\Lab5.vcxproj",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NewtownsPalindrome", "NewtownsPalindrome\NewtownsPalindrome.vcxproj", "{C8AD5933-C146-4712-B72C-7B07C6EC14B0}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tstrings", "tstrings\tstrings.vcxproj", "{93D11349-EF64-4DC2-85AF-1356C41870E2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -66,6 +68,14 @@ Global
 		{C8AD5933-C146-4712-B72C-7B07C6EC14B0}.Release|x64.Build.0 = Release|x64
 		{C8AD5933-C146-4712-B72C-7B07C6EC14B0}.Release|x86.ActiveCfg = Release|Win32
 		{C8AD5933-C146-4712-B72C-7B07C6EC14B0}.Release|x86.Build.0 = Release|Win32
+		{93D11349-EF64-4DC2-85AF-1356C41870E2}.Debug|x64.ActiveCfg = Debug|x64
+		{93D11349-EF64-4DC2-85AF-1356C41870E2}.Debug|x64.Build.0 = Debug|x64
+		{93D11349-EF64-4DC2-85AF-1356C41870E2}.Debug|x86.ActiveCfg = Debug|Win32
+		{93D11349-EF64-4DC2-85AF-1356C41870E2}.Debug|x86.Build.0 = Debug|Win32
+		{93D11349-EF64-4DC2-85AF-1356C41870E2}.Release|x64.ActiveCfg = Release|x64
+		{93D11349-EF64-4DC2-85AF-1356C41870E2}.Release|x64.Build.0 = Release|x64
+		{93D11349-EF64-4DC2-85AF-1356C41870E2}.Release|x86.ActiveCfg = Release|Win32
+		{93D11349-EF64-4DC2-85AF-1356C41870E2}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
